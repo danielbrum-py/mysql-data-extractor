@@ -12,7 +12,8 @@ df.to_sql(
     "samp_2026",
     con=engine,
     if_exists="replace",
-    index=False
+    index=False,
+    chunksize=5000
 )
 
-print("Dados enviados para o MySQL!")
+print("Dados enviados para o MySQL")
