@@ -1,5 +1,4 @@
 import Backend
-import customtkinter as ctk
 
 usuario = input("Insira seu usuario do mysql: ")
 senha = input("Insira sua senha mysql: ")
@@ -14,3 +13,4 @@ db = Backend.conectar_mysql(
 )
 
 print("Conectado ao MySQL!")
+Backend.showdata(db)

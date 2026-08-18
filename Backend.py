@@ -11,22 +11,21 @@ def conectar_mysql(usuario, senha, host, bancodados):
     return db
 
 def showdata(db):
-    cursor = db.cursor
-    cursor.execute("""SELECT * FROM energia""")
+    cursor = db.cursor()
+    cursor.execute("""SELECT * FROM samp_2026""")
     dados = cursor.fetchall()
     for i in dados:
         print(i)
-    db.commit()
     cursor.close()
        
-def toexcel(db):
-    query = "SELECT * FROM energia;"              
+"""def toexcel(db):
+    query = "SELECT * FROM samp_2026;"              
     dfb = pd.read_sql(query, con=db)
-    dfb.to_excel('samp-2026', index = False)
+    df.to_excel('samp_2026', index = False)"""
 
 def deleteall(db):
-    cursor = db.cursor
-    cursor.execute("TRUNCATE TABLE energia")
+    cursor = db.cursor()
+    cursor.execute("TRUNCATE TABLE samp_2026")
     db.commit()
     cursor.close()
     
