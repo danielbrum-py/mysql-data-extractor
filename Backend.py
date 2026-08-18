@@ -18,14 +18,12 @@ def showdata(db):
         print(i)
     cursor.close()
        
-"""def toexcel(db):
-    query = "SELECT * FROM samp_2026;"              
-    dfb = pd.read_sql(query, con=db)
-    df.to_excel('samp_2026', index = False)"""
-
-def deleteall(db):
+def toexcel(db):
     cursor = db.cursor()
-    cursor.execute("TRUNCATE TABLE samp_2026")
-    db.commit()
+    cursor.execute("SELECT * FROM samp_2026;")
+    dados = cursor.fetchall()
+    colunas = [i[0] for i in cursor.description]
     cursor.close()
-    
+    df = pd.DataFrame(dados, columns=colunas)
+    df.to_excel('mysql_extracted_file.xlsx', index=False)
+    print("Excel exported successfully!")

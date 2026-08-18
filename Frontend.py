@@ -13,4 +13,4 @@ db = Backend.conectar_mysql(
 )
 
 print("Conectado ao MySQL!")
-Backend.showdata(db)
+Backend.toexcel(db)
