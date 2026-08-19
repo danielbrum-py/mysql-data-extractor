@@ -66,7 +66,6 @@ class App(ctk.CTk):
         self.status_label.configure(text="Connected to MySQL database!", text_color="green")
 
     def export_xlsx(self):
-        # Garante que o label de status existe
         if not hasattr(self, "status_label"):
             self.status_label = ctk.CTkLabel(self, text="", font=("Arial", 16, "bold"))
             self.status_label.pack(pady=5)
