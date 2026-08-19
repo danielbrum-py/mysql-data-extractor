@@ -1,12 +1,12 @@
 import mysql.connector
-import pandas as pd
+import pandas as pd 
 
-def conectar_mysql(usuario, senha, host, bancodados):
+def conectar_mysql(app):
     db = mysql.connector.connect(
-        host = host,
-        user = usuario,
-        password = senha,
-        database = bancodados
+        host = app.host_entry.get(),
+        user = app.user_entry.get(),
+        password = app.password_entry.get(),
+        database = app.bank_entry.get()
     )
     return db
 
