@@ -12,7 +12,6 @@ def conectar_mysql(app):
 
 def showdata(db):
     cursor = db.cursor()
-    cursor.execute("""SELECT * FROM samp_2026""")
     dados = cursor.fetchall()
     for i in dados:
         print(i)
